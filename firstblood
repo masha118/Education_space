@@ -1,6 +1,24 @@
+const readline = require("readline");
+
+function sayHelloWorld() {
+    console.log("Hello, world!");
+}
+
+function askName() {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    rl.question("Как тебя зовут? ", (name) => {
+        console.log(`Привет, ${name}! 👋`);
+        rl.close();
+    });
+}
+
 function main() {
-    console.log("Hi, world!");
+    sayHelloWorld();
+    askName();
 }
 
 main();
-    
